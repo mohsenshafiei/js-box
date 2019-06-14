@@ -1,4 +1,4 @@
-function increase(fn) {
+function increment(fn) {
     return function increased(...args) {
       return fn(...args.map(arg => arg + 1));
     }
