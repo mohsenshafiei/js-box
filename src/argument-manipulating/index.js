@@ -10,6 +10,12 @@ function spread(fn) {
   }
 }
 
+function gather(fn) {
+  return function gathered(...args) {
+    return fn(args.map(arg => arg));
+  }
+}
+
 function flip(fn) {
   return function flipped(x, y, ...args) {
     return fn(y, x, ...args);
@@ -37,3 +43,7 @@ j(1, 2, 3, 4, 5);
 
 const k = spread(f);
 k([1,2,3,4,5]);
+
+
+const l = gather(f);
+l(1, 2, 3, 4, 5);
