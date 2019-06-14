@@ -34,3 +34,17 @@ const obj = {
 };
 
 console.log([...obj]);
+
+
+// The clean way to create custom iterator
+const obj1 = {
+  *[Symbol.iterator](){
+    for (let i = this.start; i <= this.end; i++) {
+      yield this.values[i];
+    }
+  },
+  start: 3,
+  end: 8,
+  values: [1, 2, 3, 4, 5, 6, 7, 8, 9],
+}
+console.log([...obj1]);
