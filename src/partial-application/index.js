@@ -23,5 +23,6 @@ const addTo10 = partial(add, 10);
 console.log(addTo10(32));
 
 // bind use partial application
+// here is a technique for built in partial application use with bind
 const addTo20 = add.bind(null, 20);
 console.log(addTo20(40));
