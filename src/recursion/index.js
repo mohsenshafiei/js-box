@@ -20,3 +20,15 @@ const mult2 = multiplication(1,2,2);
 console.log(sum);
 console.log(mult);
 console.log(mult2);
+
+
+
+// PTC (proper tail call)
+function summmationRecur(sum, arg, ...args) {
+  sum += arg;
+  if (args.length === 0) return sum;
+  return summmationRecur(sum, ...args);
+}
+
+const sumRecur = summmationRecur(1,2,2,3,3,4,5);
+console.log(sumRecur);
